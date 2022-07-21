@@ -20,7 +20,7 @@ defaults:
 jobs:
   Run-task-workflow:
     if: ${{ github.actor == 'jardizzo' }}
-    runs-on: self-hosted
+    runs-on: NCCS
     steps:
       - name: checkout
         uses: actions/checkout@v3
