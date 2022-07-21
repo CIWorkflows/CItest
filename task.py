@@ -11,7 +11,7 @@ for task in config['tasks']:
 
     print('Task Name  : ', task.get('name:', 'None'))
     print('Description: ', task.get('description', 'None'))
-    print('Status     : ', task.get('status', 0))
+    print('Status     : ', task.get('status:', 0))
 
     status = task.get('status', 0)
     if status < 0:
