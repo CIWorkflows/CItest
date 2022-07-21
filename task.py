@@ -10,7 +10,7 @@ with open('task.yaml', 'r') as ymlfile:
 for task in config['tasks']:
 
     print('Task Name  : ', task.get('name:', 'None'))
-    print('Description: ', task.get('description', 'None'))
+    print('Description: ', task.get('description:', 'None'))
     print('Status     : ', task.get('status:', 0))
 
     status = task.get('status', 0)
