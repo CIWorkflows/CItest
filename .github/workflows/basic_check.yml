@@ -24,8 +24,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-
+        with:
+          inputs: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
       - name: run-task-workflow
+        with:
+          inputs: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
         run: |
           source /etc/profile.d/modules.sh
           source config/modules
