@@ -1,0 +1,13 @@
+tasks:
+
+  - name: GetObservations
+    description: 'Acquires input observations'
+    status: 0
+
+  - name: GetBackground
+    description: 'Acquires background files'
+    status: 0
+
+  - name: StageData3
+    description: 'Stages resource files'
+    status: 0
