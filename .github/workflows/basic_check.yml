@@ -20,15 +20,15 @@ defaults:
 jobs:
   Run-task-workflow:
     if: ${{ github.actor == 'jardizzo' }}
+    if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
+        GITHUB_SHA=$(cat $GITHUB_EVENT_PATH | jq -r .pull_request.head.sha)
+    fi
     runs-on: self-hosted
     steps:
       - name: checkout
         uses: actions/checkout@v3
-        with:
-          inputs: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+        
       - name: run-task-workflow
-        with:
-          inputs: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
         run: |
           source /etc/profile.d/modules.sh
           source config/modules
