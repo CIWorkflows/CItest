@@ -1,0 +1,8 @@
+
+# Module initialization
+# ---------------------
+source $MODULESHOME/init/sh
+
+module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
+module load GEOSenv
+module load python/GEOSpyD/Min4.9.2_py3.9
