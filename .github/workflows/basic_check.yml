@@ -20,6 +20,7 @@ defaults:
 jobs:
   Run-task-workflow:
     if: ${{ github.actor == 'jardizzo' }}
+    uses: CIWorkflows/Workflows/.github/workflows/basic_check.yml@refs/heads/develop
     runs-on: self-hosted
     steps:
       - name: checkout
