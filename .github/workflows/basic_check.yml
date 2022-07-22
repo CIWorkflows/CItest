@@ -4,13 +4,7 @@ name: basic_check.yml
 
 # Controls when the workflow will run
 on:
-  # uncomment if we decide to run tests when merging to develeop branch
-  # push:
-    ## merges to develop branch
-  #  branches: [develop]
   pull_request:
-    # pull request to develop with a label
- #   types: [labeled]
     branches: [develop]
 
 defaults:
@@ -19,18 +13,5 @@ defaults:
 
 jobs:
   Run-task-workflow:
-    if: ${{ github.actor == 'jardizzo' }}
     uses: CIWorkflows/Workflows/.github/workflows/basic_check.yml@refs/heads/develop
-    runs-on: self-hosted
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-        with:
-            ref: ${{ github.event.pull_request.head.sha }}
-        
-      - name: run-task-workflow
-        run: |
-          source /etc/profile.d/modules.sh
-          source config/modules
-          ./task.py
           
