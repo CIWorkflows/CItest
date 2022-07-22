@@ -13,5 +13,5 @@ defaults:
 
 jobs:
   Run-task-workflow:
-    uses: CIWorkflows/Workflows/.github/workflows/swell-workflow01.yml@refs/heads/develop
+    uses: CIWorkflows/Workflows/.github/workflows/swell-workflow01.yml@develop
           
